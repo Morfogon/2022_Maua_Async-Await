@@ -1,3 +1,4 @@
+const { default: axios } = require('axios')
 require('dotenv').config()
 
 // const PROTOCOL = process.env.PROTOCOL
@@ -14,3 +15,13 @@ const url = `${PROTOCOL}://${BASE_URL}?appid=${APPID}&lang=${LANGUAGE}&units=${U
 
 
 console.log(url)
+
+axios.get(url).then(res =>{
+    console.log(res.data)
+    return res.data
+    })
+    .then(res => {
+        console.log(res.cnt)
+        return res
+    })
+
